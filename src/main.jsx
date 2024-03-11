@@ -4,6 +4,7 @@ import HomeApp from "./HomeApp.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import CurrencyApp from "./CurrencyApp.jsx";
+import TodoApp from "./TodoApp.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
   {
     path: "currency-app",
     element: <CurrencyApp />,
+  },
+  {
+    path: "todo-app",
+    element: <TodoApp />,
   },
 ]);
 
