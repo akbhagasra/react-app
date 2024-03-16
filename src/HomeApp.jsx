@@ -1,15 +1,37 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function HomeApp() {
-  const [count, setCount] = useState(0);
+const apps = [
+  {
+    id: "id-1",
+    name: "Currency App",
+    route: "/currency-app",
+  },
+  {
+    id: "id-2",
+    name: "Todo App",
+    route: "/todo-app",
+  },
+  {
+    id: "id-2",
+    name: "Store App",
+    route: "/store-app",
+  },
+];
 
+function HomeApp() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">Hello world from home!</h1>
-      <NavLink to="/currency-app">Currency App</NavLink>
-      <NavLink to="/todo-app">Todo App</NavLink>
-    </>
+    <div className="bg-gray-700 w-full min-h-screen grid grid-cols-3 gap-4 md:grid-cols-6 p-5">
+      {apps.map((app) => (
+        <NavLink
+          key={app.id}
+          to={app.route}
+          className="bg-gray-500 rounded-lg text-white text-2xl text-center"
+        >
+          {app.name}
+        </NavLink>
+      ))}
+    </div>
   );
 }
 
